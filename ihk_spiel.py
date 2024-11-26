@@ -1,9 +1,9 @@
-from test_def import *
+from ihk_spiel_def import *
 
 # State
-life = 3
 
 game_state = {
+    "player_life": 3,
     "welcome_massage": "\nWelcome to CTF game! :)\n",
     "game_rules": "You must answer 3 questions correctly to collect the flag, but you have only three lives!",
 
@@ -20,8 +20,8 @@ while True:
     welcome_massage(game_state)
     game_rules(game_state)
     
-    while life > 0:
-        print("\nLvl1") #TODO: kell egy szint kiírató függvény
+    while game_state["player_life"] > 0:
+        print("\nLvl1") #TODO: kell egy szint kiírató függvény ami a szitet is nyilvántartja (STATE)
         flag1 = input("Enter the command to display IP addresses: ")
         
         if flag1.lower() == "ipconfig":
@@ -29,13 +29,13 @@ while True:
             letter1 = 'I'
             break
         else:
-            life = minus_life(life)
-            answer_not_correct(life)
-            if life == 0:
+            game_state["player_life"] = minus_life(game_state["player_life"])
+            answer_not_correct(game_state["player_life"])
+            if game_state["player_life"] == 0:
                 you_are_dead_massage()
                 break
 
-    while life > 0:
+    while game_state["player_life"] > 0:
         print("\nLvl2")
         flag2 = input("How can I display output in the console in Python? ")
         
@@ -50,7 +50,7 @@ while True:
                 you_are_dead_massage()
                 break
 
-    while life > 0:
+    while game_state["player_life"] > 0:
         print("\nLvl3")
         flag3 = input("Which OS does Peter hate the most? ")
         
@@ -66,7 +66,7 @@ while True:
                 break
 
 
-    while life > 0:
+    while game_state["player_life"] > 0:
         CTF = input("\nEnter the letter you received: ")
 
         if CTF.upper() == f"{letter1}{letter2}{letter3}":
@@ -80,6 +80,6 @@ while True:
                 you_are_dead_massage()
                 break
 
-    you_won(life)
-    want_to_try_again()
+    you_won(game_state["player_life"])
+    game_state["player_life"] = want_to_try_again(game_state["player_life"])
     

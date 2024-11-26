@@ -41,10 +41,11 @@ def you_won(life): # you won massage and exit
         return print(massage), exit()
 
 
-def want_to_try_again(): # ask if the player want to try again and reset the life
+def want_to_try_again(life): # ask if the player want to try again and reset the life
     if input("Do you want to try again? (yes/no): ").lower() == "yes":
-        global life
         life = 3
+        return life
     else: # if the player don't want to try again print goodbye and exit
         print("Goodbye!")
         exit()
+
