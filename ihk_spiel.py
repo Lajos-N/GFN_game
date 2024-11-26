@@ -1,62 +1,27 @@
+from test_def import *
+
 # State
 life = 3
 
+game_state = {
+    "welcome_massage": "\nWelcome to CTF game! :)\n",
+    "game_rules": "You must answer 3 questions correctly to collect the flag, but you have only three lives!",
 
-def welcome_massage(): # print the welcome massage
-    if not hasattr(welcome_massage, "has_run"): # check if the function has already run
-        welcome_massage.has_run = True
-
-        massage = "\nWelcome to CTF game!\n"
-        
-        return print(massage)
-
-
-def game_rules(): # print the game rules
-    if not hasattr(game_rules, "has_run"): # check if the function has already run
-        game_rules.has_run = True
-
-        massage = "You must answer 3 questions correctly to collect the flag, but you have only three lives!"  
-
-        return print(massage)
-
-    massage = "You already know the rules of the game I won't tell you again"
-    return print(massage)    
-
-
-def answer_not_correct(): # answer is not correct minus 1 life and print massage
-    global life
-    life -= 1
-    massage = f"Incorrect! Try again. You lost a life.\nYou have {life} lives left." if life > 0 else "You lost a life.\nYou have no more lives left."
-    return print(massage)
-
-
-def you_are_dead_massage(): # dead massage
-    massage = "You are dead! Game over!"
-    return print(massage)
-
-
-def you_won(): # you won massage and exit
-    if life > 0:
-        massage = "Well done!"
-        return print(massage), exit()
-
-
-def want_to_try_again(): # ask if the player want to try again and reset the life
-    if input("Do you want to try again? (yes/no): ").lower() == "yes":
-        global life
-        life = 3
-        # TODO: CLI clean???
-    else: # if the player don't want to try again print goodbye and exit
-        print("Goodbye!")
-        exit()
+    "question_answer" : {
+        "level1": ["Enter the command to display IP addresses: ", "ipconfig", "I"],
+        "level2": ["How can I display output in the console in Python? ", "print()", "H"],
+        "level3": ["Which OS does Peter hate the most? ", "windows", "K"],
+        "level4": ["Enter the letter you received: ", "IHK"], #TODO: késöbb átírni az IHK-t, hogy ne legyen fix        
+    },
+}
 
 
 while True:
-    welcome_massage()
-    game_rules()
+    welcome_massage(game_state)
+    game_rules(game_state)
     
     while life > 0:
-        print("\nLvl1")
+        print("\nLvl1") #TODO: kell egy szint kiírató függvény
         flag1 = input("Enter the command to display IP addresses: ")
         
         if flag1.lower() == "ipconfig":
@@ -64,7 +29,8 @@ while True:
             letter1 = 'I'
             break
         else:
-            answer_not_correct()
+            life = minus_life(life)
+            answer_not_correct(life)
             if life == 0:
                 you_are_dead_massage()
                 break
@@ -78,7 +44,8 @@ while True:
             letter2 = 'H'
             break  
         else:
-            answer_not_correct()
+            life = minus_life(life)
+            answer_not_correct(life)
             if life == 0:
                 you_are_dead_massage()
                 break
@@ -92,7 +59,8 @@ while True:
             letter3 = 'K'
             break
         else:  
-            answer_not_correct()
+            life = minus_life(life)
+            answer_not_correct(life)
             if life == 0:
                 you_are_dead_massage()
                 break
@@ -106,11 +74,12 @@ while True:
             print(f"The final flag is: GFN") 
             break
         else:
-            answer_not_correct()
+            life = minus_life(life)
+            answer_not_correct(life)
             if life == 0:
                 you_are_dead_massage()
                 break
 
-    you_won()
+    you_won(life)
     want_to_try_again()
     
