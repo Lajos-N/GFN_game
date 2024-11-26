@@ -6,7 +6,7 @@ def welcome_massage(): # print the welcome massage
     if not hasattr(welcome_massage, "has_run"): # check if the function has already run
         welcome_massage.has_run = True
 
-        massage = "\nWelcome to Chris and Can's CTF \n\nYou must answer 3 questions correctly to collect the flag!\n"
+        massage = "\nWelcome to CTF game!\n"
         
         return print(massage)
 
@@ -45,6 +45,7 @@ def want_to_try_again(): # ask if the player want to try again and reset the lif
     if input("Do you want to try again? (yes/no): ").lower() == "yes":
         global life
         life = 3
+        # TODO: CLI clean???
     else: # if the player don't want to try again print goodbye and exit
         print("Goodbye!")
         exit()
@@ -97,8 +98,18 @@ while True:
                 break
 
 
-    #TODO: CTF ist noch nicht implementiert
+    while life > 0:
+        CTF = input("\nEnter the letter you received: ")
 
+        if CTF.upper() == f"{letter1}{letter2}{letter3}":
+            print("\nWell done, you captured your first flag!")
+            print(f"The final flag is: GFN") 
+            break
+        else:
+            answer_not_correct()
+            if life == 0:
+                you_are_dead_massage()
+                break
 
     you_won()
     want_to_try_again()
