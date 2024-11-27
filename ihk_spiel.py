@@ -11,7 +11,7 @@ game_state = {
         "level1": ["Enter the command to display IP addresses?", "ipconfig", "I"],
         "level2": ["How can I display output in the console in Python?", "print()", "H"],
         "level3": ["Which OS does Peter hate the most?", "windows", "K"],
-        "level4": ["Enter the letter you received: ", "ihk", ""],
+        "level4": ["Enter the letter you received: ", "ihk", "Well done, you captured your first flag!\nThe final flag is: GFN"],
     },
 }
 
@@ -21,7 +21,7 @@ while True:
     game_rules(game_state)
     
     while game_state["player_life"] > 0 and game_state["level"] < 5:
-        print(f"Level {game_state["level"]}") 
+        print(f"Level {game_state["level"]}" if game_state["level"] < 4 else "") 
         question_printer(game_state, game_state["level"])
 
         if player_input_and_answer_check(game_state["question_answer"][f"level{game_state['level']}"][1]):
@@ -33,5 +33,8 @@ while True:
             answer_not_correct(game_state["player_life"])
                             
     you_won(game_state["player_life"])
-    game_state["player_life"] = want_to_try_again(game_state["player_life"])
-    
+
+    if game_state["player_life"] == 0:
+        you_are_dead_massage()
+        
+        game_state["player_life"], game_state["level"] = want_to_try_again(game_state["player_life"],game_state["level"])
