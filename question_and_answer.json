@@ -1,19 +1,19 @@
 [
     {
         "question": "Which protocol is used to transfer web pages?",
-        "answer": "HTTP"
+        "answer": "http"
     },
     {
         "question": "What programming language is popular in data science?",
-        "answer": "Python"
+        "answer": "python"
     },
     {
         "question": "What is the program called that you use to surf the internet?",
-        "answer": "Browser"
+        "answer": "browser"
     },
     {
         "question": "What is the standard markup language for creating web pages?",
-        "answer": "HTML"
+        "answer": "html"
     },
     {
         "question": "In Python, what keyword is used to define a function?",
@@ -29,31 +29,31 @@
     },
     {
         "question": "Which OS uses Tux as its mascot?",
-        "answer": "Linux"
+        "answer": "linux"
     },
     {
         "question": "Which company developed Android?",
-        "answer": "Google"
+        "answer": "google"
     },
     {
         "question": "What language is used to manage databases?",
-        "answer": "SQL"
+        "answer": "sql"
     },
     {
         "question": "Which company produces 'ThinkPad'?",
-        "answer": "Lenovo"
+        "answer": "lenovo"
     },
     {
         "question": "Which operating system is developed by Apple?",
-        "answer": "macOS"
+        "answer": "macos"
     },
     {
         "question": "Which cloud computing service is developed by Amazon?",
-        "answer": "AWS"
+        "answer": "aws"
     },
     {
         "question": "What is the smallest unit of data in computing?",
-        "answer": "Bit"
+        "answer": "bit"
     },
     {
         "question": "Which HTTP status code means 'Page Not Found'?",
@@ -61,19 +61,19 @@
     },
     {
         "question": "What command checks the network connectivity between two systems?",
-        "answer": "Ping"
+        "answer": "ping"
     },
     {
         "question": "What network device manages multiple VLANs?",
-        "answer": "Switch"
+        "answer": "switch"
     },
     {
         "question": "What is a secure LAN connection through an insecure network called?",
-        "answer": "VPN"
+        "answer": "vpn"
     },
     {
         "question": "Which Bluetooth technology enables payment and data exchange via a mobile phone?",
-        "answer": "NFC"
+        "answer": "nfc"
     },
     {
         "question": "How many bits does an IPv4 address consist of?",
