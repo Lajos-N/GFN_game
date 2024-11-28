@@ -1,3 +1,6 @@
+import json
+import random
+
 def welcome_massage(game_state): # print the welcome massage
     if not hasattr(welcome_massage, "has_run"): # check if the function has already run
         welcome_massage.has_run = True
@@ -13,9 +16,30 @@ def game_rules(game_state): # print the game rules
     massage = "You already know the rules of the game I won't tell you again"
     return print(massage)    
 
+#TODO: dokumentation
+def question_lottery():
+    random_questions = []
+    with open("question_and_answer.json") as f:
+        questions = json.load(f)
+
+    for i in range(3):
+        temp = random.choice(questions)
+        questions.remove(temp)
+        random_questions.extend([temp["question"], temp["answer"]])
+        
+    return random_questions
+
+#TODO: dokumentation
+def question_uploader(random_questions, questions_answers):
+    for i in range(3):
+        questions_answers[f"level{i + 1}"][0] = random_questions[i * 2]
+        questions_answers[f"level{i + 1}"][1] = random_questions[i * 2 + 1]
+
+
 def question_printer(game_state, level): # print the question for the player on the actual level
     massage = game_state["question_answer"][f"level{level}"][0]
     return print(massage)
+
 
 def player_input_and_answer_check(answer): # get the user input (answer)
     player_answer = input("Enter your answer: ").lower()
