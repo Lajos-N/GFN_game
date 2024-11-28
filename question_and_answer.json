@@ -78,5 +78,17 @@
     {
         "question": "How many bits does an IPv4 address consist of?",
         "answer": "32"
+    },
+    {
+        "question": "Enter the command to display IP addresses?",
+        "answer": "ipconfig"
+    },
+    {
+        "question": "How can I display output in the console in Python?",
+        "answer": "print()"
+    },
+    {
+        "question": "Which OS does Peter hate the most?",
+        "answer": "windows"
     }
 ]
