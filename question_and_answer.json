@@ -1,22 +1,82 @@
-{
-    "Which protocol is used to transfer web pages?": "HTTP",
-    "What programming language is popular in data science?": "Python",
-    "What is the program called that you use to surf the internet?": "Browser",
-    "What is the standard markup language for creating web pages?": "HTML",
-    "In Python, what keyword is used to define a function?": "def",
-    "What is the file extension for Python files?": ".py",
-    "In Python, which keyword is used to exit a loop?": "break",
-    "Which OS uses Tux as its mascot?": "Linux",
-    "Which company developed Android?": "Google",
-    "What language is used to manage databases?": "SQL",
-    "Which company produces 'ThinkPad'?": "Lenovo",
-    "Which operating system is developed by Apple?": "macOS",
-    "Which cloud computing service is developed by Amazon?": "AWS",
-    "What is the smallest unit of data in computing?": "Bit",
-    "Which HTTP status code means 'Page Not Found'?": "404",
-    "What command checks the network connectivity between two systems?": "Ping",
-    "What network device manages multiple VLANs?": "Switch",
-    "What is a secure LAN connection through an insecure network called?": "VPN",
-    "Which Bluetooth technology enables payment and data exchange via a mobile phone?": "NFC",
-    "How many bits does an IPv4 address consist of?": "32"
-}
+[
+    {
+        "question": "Which protocol is used to transfer web pages?",
+        "answer": "HTTP"
+    },
+    {
+        "question": "What programming language is popular in data science?",
+        "answer": "Python"
+    },
+    {
+        "question": "What is the program called that you use to surf the internet?",
+        "answer": "Browser"
+    },
+    {
+        "question": "What is the standard markup language for creating web pages?",
+        "answer": "HTML"
+    },
+    {
+        "question": "In Python, what keyword is used to define a function?",
+        "answer": "def"
+    },
+    {
+        "question": "What is the file extension for Python files?",
+        "answer": ".py"
+    },
+    {
+        "question": "In Python, which keyword is used to exit a loop?",
+        "answer": "break"
+    },
+    {
+        "question": "Which OS uses Tux as its mascot?",
+        "answer": "Linux"
+    },
+    {
+        "question": "Which company developed Android?",
+        "answer": "Google"
+    },
+    {
+        "question": "What language is used to manage databases?",
+        "answer": "SQL"
+    },
+    {
+        "question": "Which company produces 'ThinkPad'?",
+        "answer": "Lenovo"
+    },
+    {
+        "question": "Which operating system is developed by Apple?",
+        "answer": "macOS"
+    },
+    {
+        "question": "Which cloud computing service is developed by Amazon?",
+        "answer": "AWS"
+    },
+    {
+        "question": "What is the smallest unit of data in computing?",
+        "answer": "Bit"
+    },
+    {
+        "question": "Which HTTP status code means 'Page Not Found'?",
+        "answer": "404"
+    },
+    {
+        "question": "What command checks the network connectivity between two systems?",
+        "answer": "Ping"
+    },
+    {
+        "question": "What network device manages multiple VLANs?",
+        "answer": "Switch"
+    },
+    {
+        "question": "What is a secure LAN connection through an insecure network called?",
+        "answer": "VPN"
+    },
+    {
+        "question": "Which Bluetooth technology enables payment and data exchange via a mobile phone?",
+        "answer": "NFC"
+    },
+    {
+        "question": "How many bits does an IPv4 address consist of?",
+        "answer": "32"
+    }
+]
