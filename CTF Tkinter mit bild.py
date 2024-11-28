@@ -8,9 +8,9 @@ game_state = {
     "player_life": 3,
     "level": 1,
     "question_answer": {
-        "level1": ["Enter the command to display IP addresses?", "ipconfig", "I"],
-        "level2": ["How can I display output in the console in Python?", "print()", "H"],
-        "level3": ["Which OS does Peter hate the most?", "windows", "K"],
+        "level1": ["", "", "I"],
+        "level2": ["", "", "H"],
+        "level3": ["", "", "K"],
         "level4": ["Enter the letter you received: ", "ihk", "Well done, you captured your first flag!\nThe final flag is: GFN"],
     },
     "collected_letters": [],  # Neue Liste für gesammelte Buchstaben
@@ -71,6 +71,7 @@ level_label = tk.Label(
 
 # Spielfunktionen
 def start_game():
+    question_uploader(question_lottery(), game_state["question_answer"])
     # Welcome-Nachricht und Regeln ausblenden
     welcome_label.pack_forget()
     rules_label.pack_forget()
