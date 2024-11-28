@@ -7,16 +7,18 @@ game_state = {
     "player_life": 3,
     "level": 1,
 
+
     "question_answer" : {
-        "level1": ["Enter the command to display IP addresses?", "ipconfig", "I"],
-        "level2": ["How can I display output in the console in Python?", "print()", "H"],
-        "level3": ["Which OS does Peter hate the most?", "windows", "K"],
+        "level1": ["", "", "I"],
+        "level2": ["", "", "H"],
+        "level3": ["", "", "K"],
         "level4": ["Enter the letter you received: ", "ihk", "Well done, you captured your first flag!\nThe final flag is: GFN"],
     },
 }
 
 
 while True:
+    question_uploader(question_lottery(), game_state["question_answer"])
     welcome_massage(game_state)
     game_rules(game_state)
     
